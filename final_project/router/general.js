@@ -108,23 +108,7 @@ public_users.get('/title/:title',function (req, res) {
      }
     }
       res.send(titleBooks);})
-
-
-public_users.get('/title/:title', async function (req, res) {
-  try {
-    const title = req.params.title;
-    const titleBooks = {};
-    for (let isbn in books) {
-      if (books[isbn].title === title) {
-        titleBooks[isbn] = books[isbn];
-      }
-    }
-    res.send(titleBooks);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send({ error: 'Internal Server Error' });
-  }
-});
+    
 
 //using async/await
 public_users.get('/title2/:title', async function (req, res) {
